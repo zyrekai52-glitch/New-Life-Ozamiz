@@ -13,7 +13,7 @@
   <nav class="desktop-links" aria-label="Main navigation">
     <a class="active" href="#home">Home</a><a href="#schedule">Schedule</a><a href="#calendar">Calendar</a><a href="#music">Worship Music</a><a href="#songs">Songs</a><a href="#events">Events</a><a href="#about">About</a><a href="#contact">Contact</a>
   </nav>
-  <div class="nav-actions"><button class="ghost" id="themeBtn" type="button">◐</button><a class="pill primary" href="#schedule">View Schedule</a><button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button></div>
+  <div class="nav-actions"><button class="ghost" id="themeBtn" type="button">◐</button><button class="pill app-download-nav" id="downloadAppBtn" type="button">Get the App ↓</button><a class="pill primary" href="#schedule">View Schedule</a><button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button></div>
 </header>
 
 <div class="mobile-drawer" id="drawer" aria-hidden="true"><div class="drawer-head"><div class="brand"><span class="brand-logo"><img src="assets/icon.svg" alt=""></span><span><b>NEW LIFE</b><i>OZAMIZ</i></span></div><button class="icon-close" id="drawerClose" type="button" aria-label="Close menu">✕</button></div><div class="drawer-links"><a href="#home">Home</a><a href="#schedule">Schedule</a><a href="#calendar">Calendar</a><a href="#music">Worship Music</a><a href="#songs">Songs</a><a href="#events">Events</a><a href="#about">About</a><a href="#contact">Contact</a><a href="manage/index.html">Manage Church</a></div><a class="pill primary wide" href="#schedule">View Today's Schedule</a></div>
@@ -23,7 +23,7 @@
   <div class="hero-bg"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="grid-glow"></div></div>
   <div class="hero-copy reveal"><div class="eyebrow"><span class="live-dot"></span> CHRISTIAN CHURCH · OZAMIZ CITY</div>
     <h1>Making Jesus<br><em>Known.</em></h1><p>Through the power of the Word,<br>the presence of the Holy Spirit.</p>
-    <div class="hero-buttons"><a class="pill primary" href="#schedule">Explore schedule <span>↗</span></a><a class="link-button" href="#music">Listen to worship <span>▶</span></a></div>
+    <div class="hero-buttons"><a class="pill primary" href="#schedule">Explore schedule <span>↗</span></a><a class="link-button" href="#music">Listen to worship <span>▶</span></a><button class="link-button" id="heroDownloadBtn" type="button">Get the app <span>↓</span></button></div>
     <div class="hero-meta"><span>Asia/Manila</span><span>Open to everyone</span><span>No login required</span></div>
   </div>
   <div class="hero-card reveal"><div class="hero-card-top"><span class="eyebrow">NEXT GATHERING</span><span class="mini-status">OFFICIAL</span></div><h3 id="heroNextTitle">Sunday Worship Service</h3><p id="heroNextMeta">August 30 · 9:00 AM · Sanctuary</p><div class="countdown" id="countdown"><div><b>--</b><span>DAYS</span></div><div><b>--</b><span>HRS</span></div><div><b>--</b><span>MIN</span></div><div><b>--</b><span>SEC</span></div></div><a class="card-link" href="#calendar">Open event <span>→</span></a></div>
@@ -60,6 +60,46 @@
 
 <div class="floating-player" id="floatingPlayer"><div class="mini-art">NL</div><div class="mini-text"><b id="miniTitle">Goodness of God</b><span id="miniArtist">Bethel Music</span></div><button id="miniPrev" type="button">⏮</button><button id="miniPlay" class="mini-play" type="button">▶</button><button id="miniNext" type="button">⏭</button></div>
 
+<div class="app-modal" id="appModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="appModalTitle">
+  <div class="app-modal-backdrop" data-close-app></div>
+  <div class="app-modal-panel">
+    <div class="app-modal-glow"></div>
+    <header class="app-modal-head">
+      <div>
+        <div class="eyebrow">NEW LIFE OZAMIZ APP</div>
+        <h2 id="appModalTitle">Take New Life<br><em>with you.</em></h2>
+        <p>Choose your device. Android users can download the APK. iPhone and iPad users can install the same app as a Home Screen app through Safari.</p>
+      </div>
+      <button class="icon-close app-modal-close" id="appModalClose" type="button" aria-label="Close app download">✕</button>
+    </header>
+    <div class="app-device-grid">
+      <article class="app-device-card android-card" data-device="android">
+        <div class="device-badge">ANDROID</div>
+        <div class="device-icon android-icon">A</div>
+        <div class="app-device-copy"><h3>Android</h3><p>Download the official Android APK, or install the web app for a lighter experience.</p></div>
+        <div class="device-actions">
+          <a class="pill primary wide" id="androidReleaseBtn" href="https://github.com/zyrekai52-glitch/New-Life-Ozamiz/releases/latest" target="_blank" rel="noreferrer">Download APK ↗</a>
+          <button class="pill dark wide" id="androidInstallBtn" type="button">Install App</button>
+        </div>
+        <small>APK downloads come from the GitHub Releases page.</small>
+      </article>
+      <article class="app-device-card ios-card" data-device="ios">
+        <div class="device-badge">IPHONE / IPAD</div>
+        <div class="device-icon ios-icon"></div>
+        <div class="app-device-copy"><h3>iPhone & iPad</h3><p>Install the New Life Ozamiz web app directly from Safari. No APK is used on Apple devices.</p></div>
+        <div class="ios-steps">
+          <div><span>1</span><p>Open this website in <b>Safari</b>.</p></div>
+          <div><span>2</span><p>Tap <b>Share</b> in Safari.</p></div>
+          <div><span>3</span><p>Choose <b>Add to Home Screen</b>, then tap <b>Add</b>.</p></div>
+        </div>
+        <button class="pill dark wide" id="iosInstallBtn" type="button">Show iPhone Instructions</button>
+        <small>For a future TestFlight build, this card can be linked to the official Apple distribution page.</small>
+      </article>
+    </div>
+    <div class="app-modal-footer"><span>Works on phones, tablets, and desktop.</span><span>Public site · No visitor login required</span></div>
+  </div>
+</div>
+<div class="ios-help-toast" id="iosHelpToast" role="status" aria-live="polite"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script type="module" src="app.js"></script>
 </body>

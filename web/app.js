@@ -23,6 +23,45 @@ $('#themeBtn').onclick=()=>{document.body.classList.toggle('midnight');localStor
 $('#prevMonth').onclick=()=>{state.month=new Date(state.month.getFullYear(),state.month.getMonth()-1,1);renderCalendar()};$('#nextMonth').onclick=()=>{state.month=new Date(state.month.getFullYear(),state.month.getMonth()+1,1);renderCalendar()};
 $('#menuBtn').onclick=()=>{document.body.classList.add('drawer-open');$('#drawer').setAttribute('aria-hidden','false')};$('#drawerClose').onclick=()=>{document.body.classList.remove('drawer-open');$('#drawer').setAttribute('aria-hidden','true')};$$('#drawer a').forEach(a=>a.onclick=()=>$('#drawerClose').click());
 $('#mobileMore').onclick=()=>{document.body.classList.add('sheet-open');$('#moreSheet').classList.add('open');$('#moreSheet').setAttribute('aria-hidden','false')};$('#sheetClose').onclick=closeSheet;$('#moreSheet').addEventListener('click',e=>{if(e.target===e.currentTarget)closeSheet()});function closeSheet(){document.body.classList.remove('sheet-open');$('#moreSheet').classList.remove('open');$('#moreSheet').setAttribute('aria-hidden','true')}
-let deferred=null;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e});$('#installBtn').onclick=async()=>{if(deferred){deferred.prompt();await deferred.userChoice;deferred=null}else toast('On iPhone: Share → Add to Home Screen. On Android: use the browser Install App option.')};function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(state.toastTimer);state.toastTimer=setTimeout(()=>t.classList.remove('show'),3500)}
-window.addEventListener('scroll',()=>{$('#nav').classList.toggle('scrolled',scrollY>12)}, {passive:true});window.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet()});
+let deferred=null;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e});
+
+function openAppModal(){
+  const m=$('#appModal'); if(!m) return;
+  m.classList.add('open');
+  m.setAttribute('aria-hidden','false');
+  document.body.classList.add('app-modal-open');
+  const ua=navigator.userAgent||'';
+  const isIOS=/iPad|iPhone|iPod/.test(ua)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  const isAndroid=/Android/i.test(ua);
+  document.querySelectorAll('.app-device-card').forEach(c=>c.classList.remove('device-recommended'));
+  const recommended=isIOS?document.querySelector('.ios-card'):isAndroid?document.querySelector('.android-card'):null;
+  if(recommended) recommended.classList.add('device-recommended');
+  setTimeout(()=>$('#appModalClose')?.focus(),30);
+}
+function closeAppModal(){
+  const m=$('#appModal'); if(!m) return;
+  m.classList.remove('open');
+  m.setAttribute('aria-hidden','true');
+  document.body.classList.remove('app-modal-open');
+}
+$('#downloadAppBtn')?.addEventListener('click',openAppModal);
+$('#heroDownloadBtn')?.addEventListener('click',openAppModal);
+$('#appModalClose')?.addEventListener('click',closeAppModal);
+$('#appModal')?.addEventListener('click',e=>{if(e.target.matches('[data-close-app]'))closeAppModal()});
+$('#androidInstallBtn')?.addEventListener('click',async()=>{
+  if(deferred){deferred.prompt();await deferred.userChoice;deferred=null;return;}
+  const isStandalone=window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone;
+  if(isStandalone){toast('The New Life Ozamiz app is already installed on this device.');return;}
+  toast('Android: open your browser menu and choose “Install app” or “Add to Home screen”.');
+});
+$('#iosInstallBtn')?.addEventListener('click',()=>{
+  const t=$('#iosHelpToast');
+  t.textContent='On iPhone/iPad: open this site in Safari → tap Share ↑ → Add to Home Screen → Add. The app will appear on your Home Screen.';
+  t.classList.add('show');
+  clearTimeout(state.iosToastTimer); state.iosToastTimer=setTimeout(()=>t.classList.remove('show'),6000);
+});
+$('#installBtn').onclick=()=>openAppModal();
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(state.toastTimer);state.toastTimer=setTimeout(()=>t.classList.remove('show'),3500)}
+window.addEventListener('scroll',()=>{$('#nav').classList.toggle('scrolled',scrollY>12)}, {passive:true});window.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSheet();closeAppModal()}});
 if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});load().catch(err=>{console.error(err);toast('Content could not be loaded. Check that data/content.json is available.')});
