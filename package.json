@@ -1,0 +1,25 @@
+{
+  "name": "new-life-ozamiz",
+  "version": "2.0.0",
+  "private": true,
+  "description": "New Life Ozamiz public church website and Capacitor mobile app.",
+  "scripts": {
+    "dev": "python -m http.server 5500 -d web",
+    "serve": "python -m http.server 5500 -d web",
+    "check": "node scripts/check.js",
+    "cap:sync": "npx cap sync",
+    "cap:android": "npx cap open android",
+    "cap:ios": "npx cap open ios",
+    "build:android": "npx cap sync android && cd android && ./gradlew assembleDebug",
+    "build:android:release": "npx cap sync android && cd android && ./gradlew assembleRelease"
+  },
+  "dependencies": {
+    "@capacitor/core": "^7.4.3",
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/ios": "^7.4.3",
+    "idb": "^8.0.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3"
+  }
+}
