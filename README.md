@@ -101,3 +101,12 @@ The final version does NOT have a public song-request/schedule-request form. The
 ## YouTube music
 
 Songs are stored as YouTube links and opened/embedded through YouTube. The project does not download or rip YouTube audio/video.
+
+## App download / install
+
+The public website includes a **Get the App** button that opens a separate Android/iPhone installation experience.
+
+- **Android:** `Download APK` opens the latest GitHub Releases page. The exact APK asset can be attached to a release when the Android workflow is ready. `Install App` uses the browser PWA installer when supported.
+- **iPhone/iPad:** the site provides the correct Safari flow: open in Safari → Share → Add to Home Screen → Add. iOS does not use APK files.
+
+The download modal automatically highlights the detected device when possible.
