@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080c18"><meta name="description" content="New Life Ozamiz — church schedules, worship music, events and contact information.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon-192.png"><link rel="apple-touch-icon" href="assets/icon-192.png"><link rel="stylesheet" href="styles.css">
+<title>New Life Ozamiz | Church</title>
+</head>
+<body>
+<div class="noise"></div>
+<header class="nav" id="nav">
+  <a class="brand" href="#home"><span class="brand-logo"><img src="assets/icon.svg" alt=""></span><span><b>NEW LIFE</b><i>OZAMIZ</i></span></a>
+  <nav class="desktop-links" aria-label="Main navigation">
+    <a class="active" href="#home">Home</a><a href="#schedule">Schedule</a><a href="#calendar">Calendar</a><a href="#music">Worship Music</a><a href="#songs">Songs</a><a href="#events">Events</a><a href="#about">About</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-actions"><button class="ghost" id="themeBtn" type="button">◐</button><a class="pill primary" href="#schedule">View Schedule</a><button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button></div>
+</header>
+
+<div class="mobile-drawer" id="drawer" aria-hidden="true"><div class="drawer-head"><div class="brand"><span class="brand-logo"><img src="assets/icon.svg" alt=""></span><span><b>NEW LIFE</b><i>OZAMIZ</i></span></div><button class="icon-close" id="drawerClose" type="button" aria-label="Close menu">✕</button></div><div class="drawer-links"><a href="#home">Home</a><a href="#schedule">Schedule</a><a href="#calendar">Calendar</a><a href="#music">Worship Music</a><a href="#songs">Songs</a><a href="#events">Events</a><a href="#about">About</a><a href="#contact">Contact</a><a href="manage/index.html">Manage Church</a></div><a class="pill primary wide" href="#schedule">View Today's Schedule</a></div>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-bg"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="grid-glow"></div></div>
+  <div class="hero-copy reveal"><div class="eyebrow"><span class="live-dot"></span> CHRISTIAN CHURCH · OZAMIZ CITY</div>
+    <h1>Making Jesus<br><em>Known.</em></h1><p>Through the power of the Word,<br>the presence of the Holy Spirit.</p>
+    <div class="hero-buttons"><a class="pill primary" href="#schedule">Explore schedule <span>↗</span></a><a class="link-button" href="#music">Listen to worship <span>▶</span></a></div>
+    <div class="hero-meta"><span>Asia/Manila</span><span>Open to everyone</span><span>No login required</span></div>
+  </div>
+  <div class="hero-card reveal"><div class="hero-card-top"><span class="eyebrow">NEXT GATHERING</span><span class="mini-status">OFFICIAL</span></div><h3 id="heroNextTitle">Sunday Worship Service</h3><p id="heroNextMeta">August 30 · 9:00 AM · Sanctuary</p><div class="countdown" id="countdown"><div><b>--</b><span>DAYS</span></div><div><b>--</b><span>HRS</span></div><div><b>--</b><span>MIN</span></div><div><b>--</b><span>SEC</span></div></div><a class="card-link" href="#calendar">Open event <span>→</span></a></div>
+  <div class="hero-scroll"><span>SCROLL</span><i></i><span>NEW LIFE OZAMIZ</span></div>
+</section>
+
+<section class="marquee"><div>WORD</div><div>PRESENCE</div><div>COMMUNITY</div><div>WORSHIP</div><div>WORD</div><div>PRESENCE</div><div>COMMUNITY</div></section>
+
+<section class="section schedule-section" id="schedule"><div class="section-head reveal"><div><div class="eyebrow">YOUR WEEK IN WORSHIP</div><h2>Official schedule</h2><p>Church schedules are set by the New Life Ozamiz team. Visitors can simply view what is coming up.</p></div><a class="pill dark" href="#calendar">Open calendar</a></div><div class="schedule-grid" id="scheduleGrid"></div></section>
+
+<section class="dark-band" id="music"><div class="section-head dark-head reveal"><div><div class="eyebrow">THE SOUND OF NEW LIFE</div><h2>Worship music</h2><p>Play the songs your church team has prepared. YouTube links are used as the official source.</p></div><div class="music-head-actions"><button class="pill outline-light" id="playAllBtn" type="button">Play all</button><button class="pill outline-light" id="shuffleBtn" type="button">Shuffle</button></div></div>
+  <div class="music-feature reveal"><div class="art-large" id="artLarge"><span>NL</span><div class="art-glow"></div></div><div class="track-info"><div class="eyebrow">NOW PLAYING</div><h3 id="currentTitle">Goodness of God</h3><p id="currentArtist">Bethel Music</p><div class="wave" id="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="track-progress"><span id="elapsed">0:00</span><div class="progress"><i id="progressFill"></i></div><span id="duration">YouTube</span></div><div class="controls"><button type="button" id="prevBtn" aria-label="Previous">⏮</button><button type="button" id="playBtn" class="play-circle" aria-label="Play">▶</button><button type="button" id="nextBtn" aria-label="Next">⏭</button></div><div class="source-row"><span>YouTube source</span><a id="youtubeLink" target="_blank" rel="noreferrer">Open source ↗</a></div></div>
+    <div class="queue"><div class="queue-head"><span>UP NEXT</span><button id="queueToggle" type="button">Queue</button></div><div id="songList"></div></div>
+  </div>
+</section>
+
+<section class="section" id="songs"><div class="section-head reveal"><div><div class="eyebrow">YOUR WORSHIP LIBRARY</div><h2>Song collection</h2><p>Curated by the church team. No public song requests — just the current songs we have prepared.</p></div><div class="filter-row" id="filterRow"></div></div><div class="song-cards" id="songCards"></div></section>
+
+<section class="section calendar-section" id="calendar"><div class="section-head reveal"><div><div class="eyebrow">PHILIPPINES TIME · ASIA/MANILA</div><h2>Gathering calendar</h2><p>Browse official New Life Ozamiz activities, services, and ministry events.</p></div><div class="month-controls"><button id="prevMonth" type="button">←</button><strong id="monthTitle">August 2026</strong><button id="nextMonth" type="button">→</button></div></div><div class="calendar-wrap"><div class="calendar-card"><div class="week-row">Sun Mon Tue Wed Thu Fri Sat</div><div class="calendar-days" id="calendarDays"></div></div><div class="agenda-card"><div class="eyebrow">UPCOMING</div><div id="agenda"></div></div></div></section>
+
+<section class="band-message"><div><div class="eyebrow">A NOTE FROM THE HOUSE</div><h2>Come as you are.<br>Leave with <em>new life.</em></h2></div><div class="feature-note"><span class="note-icon">✦</span><div><b>Official scheduling is managed by the church team.</b><p>Open the Manage Church panel to update schedules, songs and announcements before publishing them to GitHub.</p></div></div></section>
+
+<section class="section" id="events"><div class="section-head reveal"><div><div class="eyebrow">WHAT'S HAPPENING</div><h2>Announcements & events</h2><p>Keep up with the next things happening at New Life Ozamiz.</p></div></div><div class="event-grid" id="eventGrid"></div></section>
+
+<section class="about-section" id="about"><div class="about-copy reveal"><div class="eyebrow">OUR HEART</div><h2>A digital home<br>for <em>community.</em></h2><p>New Life Ozamiz is a Christian church in Ozamiz City. We gather around the Word, make room for the Holy Spirit, and walk the journey of faith together.</p><div class="hero-buttons"><a class="pill primary" href="#contact">Meet us in person</a><a class="link-button" href="#home">Back to top ↑</a></div></div><div class="values reveal"><div><span>01</span><h3>Word</h3><p>Rooted in Scripture.</p></div><div><span>02</span><h3>Presence</h3><p>Open to the Holy Spirit.</p></div><div><span>03</span><h3>Community</h3><p>Growing side by side.</p></div></div></section>
+
+<section class="contact-section" id="contact"><div class="contact-copy reveal"><div class="eyebrow">COME FIND US</div><h2>New Life<br><em>Ozamiz.</em></h2><p id="contactAddress">JP Rizal Avenue, Corner Abanil Sts., 2nd Floor 50th Barangay, Ozamiz City 7200, Misamis Occidental, Philippines, 7200</p><div class="contact-actions"><a class="pill primary" id="mapLink" target="_blank" rel="noreferrer">Get directions ↗</a><a class="pill dark" id="phoneLink">Call 0960 480 5628</a></div><div class="contact-list"><a id="emailLink">newlifeozamiz@gmail.com</a><a id="fbLink" target="_blank" rel="noreferrer">Facebook · New Life Ozamiz</a></div></div><div class="map-card"><div class="map-grid"></div><span class="map-pin">✦</span><div class="map-label"><b>NEW LIFE OZAMIZ</b><span>JP RIZAL AVENUE</span></div></div></section>
+</main>
+
+<footer><div class="footer-brand"><img src="assets/icon-192.png" alt=""><div><b>NEW LIFE OZAMIZ</b><small>Making Jesus Known.</small></div></div><div class="footer-links"><a href="#home">Home</a><a href="#schedule">Schedule</a><a href="#music">Music</a><a href="#calendar">Calendar</a><a href="#contact">Contact</a><a href="manage/index.html">Manage</a></div><p>© <span id="year"></span> New Life Ozamiz. All rights reserved.</p></footer>
+
+<div class="mobile-nav" id="mobileNav"><a href="#home"><span>⌂</span><b>Home</b></a><a href="#calendar"><span>◫</span><b>Calendar</b></a><a href="#music"><span>♫</span><b>Music</b></a><a href="#schedule"><span>☷</span><b>Schedule</b></a><button id="mobileMore" type="button"><span>⋯</span><b>More</b></button></div>
+<div class="more-sheet" id="moreSheet" aria-hidden="true"><div class="sheet-inner"><div class="sheet-handle"></div><div class="sheet-head"><b>New Life Ozamiz</b><button id="sheetClose" type="button">✕</button></div><a href="#songs">Songs</a><a href="#events">Announcements</a><a href="#about">About</a><a href="#contact">Contact</a><a href="manage/index.html">Manage Church</a><button id="installBtn" class="pill primary wide" type="button">Install app</button></div></div>
+
+<div class="floating-player" id="floatingPlayer"><div class="mini-art">NL</div><div class="mini-text"><b id="miniTitle">Goodness of God</b><span id="miniArtist">Bethel Music</span></div><button id="miniPrev" type="button">⏮</button><button id="miniPlay" class="mini-play" type="button">▶</button><button id="miniNext" type="button">⏭</button></div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
