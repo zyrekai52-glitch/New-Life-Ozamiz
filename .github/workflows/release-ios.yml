@@ -1,0 +1,12 @@
+name: iOS Release (requires Apple signing secrets)
+on:
+  workflow_dispatch:
+
+# This workflow is intentionally a template. App Store/TestFlight distribution
+# requires an Apple Developer account, signing certificate, provisioning profile,
+# and secrets configured in GitHub. Do not put certificates or passwords in git.
+jobs:
+  note:
+    runs-on: macos-latest
+    steps:
+      - run: echo "Configure Apple signing secrets, then add xcodebuild archive/export steps."
