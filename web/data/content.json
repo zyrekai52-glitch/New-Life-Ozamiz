@@ -1,0 +1,28 @@
+{
+  "church": {
+    "name": "New Life Ozamiz",
+    "tagline": "Making Jesus Known through the power of the Word, the presence of the Holy Spirit.",
+    "phone": "0960 480 5628",
+    "email": "newlifeozamiz@gmail.com",
+    "facebook": "New Life Ozamiz",
+    "address": "JP Rizal Avenue, Corner Abanil Sts., 2nd Floor 50th Barangay, Ozamiz City 7200, Misamis Occidental, Philippines, 7200"
+  },
+  "schedules": [
+    { "id": "s1", "date": "2026-08-30", "time": "09:00", "title": "Sunday Worship Service", "type": "Worship", "location": "New Life Ozamiz Sanctuary", "description": "Word, worship, prayer, and community." },
+    { "id": "s2", "date": "2026-09-05", "time": "18:00", "title": "Youth Worship Night", "type": "Youth", "location": "Main Hall", "description": "A night to seek, sing, and celebrate." },
+    { "id": "s3", "date": "2026-09-12", "time": "19:00", "title": "Prayer Meeting", "type": "Prayer", "location": "Prayer Room", "description": "An evening of prayer and intercession." },
+    { "id": "s4", "date": "2026-09-16", "time": "19:00", "title": "Bible Study", "type": "Bible Study", "location": "Fellowship Hall", "description": "Growing deeper in the Word together." },
+    { "id": "s5", "date": "2026-09-20", "time": "09:00", "title": "Sunday Worship Service", "type": "Worship", "location": "New Life Ozamiz Sanctuary", "description": "Come as you are and worship together." }
+  ],
+  "songs": [
+    { "id": "m1", "title": "Goodness of God", "artist": "Bethel Music", "category": "Worship", "youtube": "https://www.youtube.com/watch?v=-f4MUUMWMV4", "color": "purple" },
+    { "id": "m2", "title": "Way Maker", "artist": "Sinach", "category": "Praise", "youtube": "https://www.youtube.com/watch?v=iJCV_2H9xD0", "color": "gold" },
+    { "id": "m3", "title": "What A Beautiful Name", "artist": "Hillsong Worship", "category": "Worship", "youtube": "https://www.youtube.com/watch?v=nQWFzMvCfLE", "color": "rose" },
+    { "id": "m4", "title": "Graves Into Gardens", "artist": "Elevation Worship", "category": "Praise", "youtube": "https://www.youtube.com/watch?v=KwX1sH1uYxw", "color": "blue" },
+    { "id": "m5", "title": "Here I Am To Worship", "artist": "Tim Hughes", "category": "Worship", "youtube": "https://www.youtube.com/watch?v=0w5j3wZ3d0E", "color": "violet" }
+  ],
+  "announcements": [
+    { "id": "a1", "title": "Youth Worship Night", "date": "2026-09-05", "time": "18:00", "text": "Bring a friend and come ready to worship together." },
+    { "id": "a2", "title": "Prayer Meeting", "date": "2026-09-12", "time": "19:00", "text": "An evening set apart for prayer and intercession." }
+  ]
+}
